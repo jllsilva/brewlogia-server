@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 // --- Configurações da API e Retentativa via .env ---
 const API_KEY = process.env.GEMINI_API_KEY;
-const API_MODEL = 'gemini-1.5-flash-latest';
+const API_MODEL = 'gemini-2.5-flash-preview-05-20';
 // Converte as variáveis de ambiente para números, com valores padrão seguros
 const MAX_RETRIES = parseInt(process.env.GEMINI_MAX_RETRIES, 10) || 3;
 const BACKOFF_BASE_MS = parseInt(process.env.GEMINI_BACKOFF_BASE_MS, 10) || 300;
@@ -133,3 +133,4 @@ app.post('/api/generate-title', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT} com até ${MAX_RETRIES} tentativas para a API.`);
 });
+
